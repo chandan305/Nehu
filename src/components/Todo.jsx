@@ -1,23 +1,33 @@
 import { useState } from "react";
 import { images } from "../assets/assets";
- 
 
 const Todo = () => {
 
   const [intial, setIntial] = useState("");
   const [showLove, setShowLove] = useState(false);
+  const [message, setMessage] = useState("");
 
   const changeInput = (event) => {
 
-    const value = event.target.value;
+    const value = event.target.value.toLowerCase();
 
-    setIntial(value);
+    setIntial(event.target.value);
 
-    // Check input
-    if (value.toLowerCase() === "i love you" || value.toLowerCase() === "khaye khana" || value.toLowerCase() === "pitdenge" ) {
+    if (value === "i love you") {
       setShowLove(true);
-    } else {
+      setMessage("Ummmhaa"); 
+    } 
+    else if (value === "khaye khana") {
+      setShowLove(true);
+      setMessage("hm madm ji❤️");
+    } 
+    else if (value === "pitdenge") {
+      setShowLove(true);
+      setMessage("achha ji pit dogi 😅");
+    } 
+    else {
       setShowLove(false);
+      setMessage("");
     }
   };
 
@@ -51,16 +61,22 @@ const Todo = () => {
           <div className="mt-15 flex flex-col items-center">
 
             <img
-              className=" w-50 h-45 mb-4 animate-bounce"
+              className="w-50 h-45 mb-4 animate-bounce"
               src={images.heart}
               alt=""
             />
-         <div>
-            
-         </div>
-            <h2 className=" text-3xl font-bold text-pink-600">
+
+            <h2 className="text-2xl font-bold text-pink-600">
               Love You Meri Pagli❤️
             </h2>
+
+            {/* Extra Message */}
+            {message && (
+              <p className="mt-2 text-lg text-gray-700 font-semibold">
+                {message}
+              </p>
+            )}
+
             <img className="mt-8" src={images.nehu} alt="" />
           </div>
         )}
