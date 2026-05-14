@@ -10,12 +10,14 @@ import userName from './user.png'
 import person from './person.png'
 import heart from './heart.png'
 import smile from './smiley.png'
+import nehu from './nehu.png'
 
 export const images = {
     menu_images,
     smile,
     logo_icon,
     shopping,
+    nehu,
     user_id,
     back,
     search,

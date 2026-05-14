@@ -14,7 +14,7 @@ const Todo = () => {
     setIntial(value);
 
     // Check input
-    if (value.toLowerCase() === "i love you" || value.toLowerCase() === "khaye khana" ) {
+    if (value.toLowerCase() === "i love you" || value.toLowerCase() === "khaye khana" || value.toLowerCase() === "pitdenge" ) {
       setShowLove(true);
     } else {
       setShowLove(false);
@@ -29,9 +29,9 @@ const Todo = () => {
         {/* Heading */}
         <div className="flex items-center justify-center gap-2 mb-6">
 
-          <h2 className="font-bold text-2xl sm:text-3xl text-center">
+          <h3 className="font-bold text-xl sm:text-2xl text-center">
             Madam Nehu This Is For You
-          </h2>
+          </h3>
 
           <img className="w-10 h-10" src={images.smile} alt="" />
 
@@ -48,18 +48,20 @@ const Todo = () => {
 
         {/* Show Love Message */}
         {showLove && (
-          <div className="mt-12 flex flex-col items-center">
+          <div className="mt-15 flex flex-col items-center">
 
             <img
-              className="w-40 h-35 mb-4 animate-bounce"
+              className=" w-50 h-45 mb-4 animate-bounce"
               src={images.heart}
               alt=""
             />
-
-            <h3 className="text-2xl font-bold text-pink-600">
-              LOVE YOU TOO MERI PAGLI❤️
-            </h3>
-
+         <div>
+            
+         </div>
+            <h2 className=" text-3xl font-bold text-pink-600">
+              Love You Meri Pagli❤️
+            </h2>
+            <img className="mt-8" src={images.nehu} alt="" />
           </div>
         )}
 
